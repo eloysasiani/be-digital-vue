@@ -1,1 +1,35 @@
 @import './base.css';
+button{
+    background: var(--navum);
+    background: var(--navdois);
+    color: var(--terciary-color);
+   font-weight:lighter;
+   font-size: 1rem;
+   padding: 0.8rem;
+   border: none;
+   border-radius: 0.5rem;
+}
+a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+nav{
+     background: var(--navum);
+    background: var(--navdois);
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: var(--margin-nav);
+    margin-bottom: var(--margin-nav);
+}

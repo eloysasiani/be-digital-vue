@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <img src="./icons/SER-DIGITAL.svg" alt="">
+        <p>Ser Digital</p>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Sobre</a></li>
@@ -12,19 +12,8 @@
 <script setup>
 </script>
 <style scoped>
-ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-li {}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: var(--margin-nav);
-    margin-bottom: var(--margin-nav);
+p {
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 </style>
