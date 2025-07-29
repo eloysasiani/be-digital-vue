@@ -14,10 +14,6 @@ a{
     color: white;
     text-decoration: none;
 }
-nav{
-     background: var(--navum);
-    background: var(--navdois);
-}
 ul {
     list-style: none;
     display: flex;
@@ -30,6 +26,9 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: var(--margin-nav);
-    margin-bottom: var(--margin-nav);
+    background: var(--navum);
+    background: var(--navdois);
+    padding: 1.3rem;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }

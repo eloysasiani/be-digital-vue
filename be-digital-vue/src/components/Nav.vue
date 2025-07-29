@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <p>Ser Digital</p>
+        <p>{{ typedText }}</p>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Sobre</a></li>
@@ -9,11 +9,15 @@
         </ul>
     </nav>
 </template>
+
 <script setup>
+
 </script>
+
 <style scoped>
 p {
     color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 }
 </style>
