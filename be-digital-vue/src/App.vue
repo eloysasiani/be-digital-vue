@@ -8,18 +8,8 @@ let lastTransform = ''
 function onMove(e) {
   lastTransform = `translate(${e.clientX}px, ${e.clientY}px)`
   if (!dot.value) return
-
-  const inNav = e.target.closest('nav') !== null
-  const isButton = e.target.closest('button') !== null
-  const isLink = e.target.closest('a') !== null
-
-  const hideCursor = inNav || isButton || isLink
-
-  dot.value.style.display = hideCursor ? 'none' : 'block'
-
-  if (!hideCursor) {
-    dot.value.style.transform = lastTransform
-  }
+  dot.value.style.transform = lastTransform     // => SEM esconder
+  if (dot.value.style.display !== 'block') dot.value.style.display = 'block'
 }
 
 function onDown() {
@@ -36,9 +26,11 @@ function onDown() {
 
 onMounted(() => {
   if (dot.value) {
+    // Posição inicial visível (centro do ecrã)
+    dot.value.style.display = 'block'
     dot.value.style.transform = `translate(${window.innerWidth / 2}px, ${window.innerHeight / 2}px)`
   }
-  window.addEventListener('pointermove', onMove)
+  window.addEventListener('pointermove', onMove, { passive: true })
   window.addEventListener('pointerdown', onDown)
 })
 
@@ -54,12 +46,14 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-:global(body) {
-  cursor: none;
+:global(html, body, *) {
+  cursor: none !important;
 }
 
-:global(nav, nav *, button, a) {
-  cursor: initial;
+:global(a),
+:global(button),
+:global([role="button"]) {
+  cursor: none !important;
 }
 
 .cursor-dot {
@@ -69,11 +63,12 @@ onUnmounted(() => {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #833AB4;
   background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 90%);
   pointer-events: none;
+  /* não bloqueia cliques/hover */
   transform: translate(-50%, -50%);
   transition: transform 0.07s linear;
+  /* suaviza o movimento */
   z-index: 9999;
   box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
 }

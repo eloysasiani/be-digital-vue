@@ -16,5 +16,15 @@ import slack from "@/assets/images/slack.svg"
 import zoom from "@/assets/images/zoom.svg"
 </script>
 <style scoped>
+.container {
+    display: grid;
+    gap: 2rem;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+}
 
+.branding {
+    display: grid;
+    gap: 4rem;
+}
 </style>
