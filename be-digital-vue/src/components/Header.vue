@@ -8,3 +8,6 @@
 import Nav from './Nav.vue'
 import HeaderPrincipal from './HeaderPrincipal.vue';  
 </script>
+<style scoped>
+
+</style>

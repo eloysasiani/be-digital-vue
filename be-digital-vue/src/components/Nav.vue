@@ -14,7 +14,7 @@
 import { ref, onMounted } from 'vue'
 
 const texto = "SER DIGITAL";
-const typedText = ref(''); 
+const typedText = ref('');
 const delay = 100;
 
 onMounted(() => {
@@ -22,7 +22,7 @@ onMounted(() => {
 
     letras.forEach((letra, indice) => {
         setTimeout(() => {
-            typedText.value += letra; 
+            typedText.value += letra;
         }, delay * indice);
     });
 });
@@ -31,7 +31,7 @@ onMounted(() => {
 <style scoped>
 p {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
 }

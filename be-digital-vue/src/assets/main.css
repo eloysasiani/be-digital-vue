@@ -15,6 +15,7 @@ a{
     text-decoration: none;
     font-size: 1.2rem;
       transition: color .10s ease, background .10s ease;
+       font-size: 1.4rem;            
     
 }
 ul {
@@ -31,7 +32,7 @@ nav {
     justify-content: space-between;
     background: var(--navum);
     background: var(--navdois);
-    padding: 1.4rem;
+    padding: 1.8rem;
      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
      border-radius: 0 0 0.6rem 0.6rem;
     
@@ -44,7 +45,7 @@ nav:hover p,
   background: var(--navdois);             
   -webkit-background-clip: text;        
   background-clip: text;                  
-  color: transparent;                     
+  color: transparent;         
   -webkit-text-fill-color: transparent;   
 
 }

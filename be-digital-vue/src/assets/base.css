@@ -3,7 +3,7 @@
     --secundary-color: #8EADD5;
     --terciary-color:#F6F6F6;
     --navum: #833AB4;
-   --navdois: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 90%);
+   --navdois: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgb(181, 17, 199) 90%);
     --font-family: inter;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
