@@ -13,14 +13,17 @@ a{
     list-style: none;
     color: white;
     text-decoration: none;
+    font-size: 1.2rem;
+      transition: color .10s ease, background .10s ease;
+    
 }
 ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    gap: 3rem;
 }
 
-li {}
 
 nav {
     display: flex;
@@ -28,7 +31,57 @@ nav {
     justify-content: space-between;
     background: var(--navum);
     background: var(--navdois);
-    padding: 1.3rem;
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1.4rem;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     border-radius: 0 0 0.6rem 0.6rem;
     
 }
+nav:hover {
+  background: antiquewhite;   
+}
+nav:hover p,
+ nav:hover a{
+  background: var(--navdois);             
+  -webkit-background-clip: text;        
+  background-clip: text;                  
+  color: transparent;                     
+  -webkit-text-fill-color: transparent;   
+
+}
+
+nav a:hover {
+    
+ -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;  
+   background: linear-gradient(
+   90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 90%
+  );
+  color: white;
+  border-radius: .5rem;
+  padding: 0.5rem;
+  
+
+}
+button {
+  background: var(--navdois);
+  color: var(--terciary-color);
+  font-weight: lighter;
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px 4px rgba(131, 58, 180, 0.7);
+
+}
+
+
+
+
+

@@ -11,13 +11,28 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 
+const texto = "SER DIGITAL";
+const typedText = ref(''); 
+const delay = 100;
+
+onMounted(() => {
+    const letras = texto.split("");
+
+    letras.forEach((letra, indice) => {
+        setTimeout(() => {
+            typedText.value += letra; 
+        }, delay * indice);
+    });
+});
 </script>
 
 <style scoped>
 p {
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
 }
 </style>
