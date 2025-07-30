@@ -3,7 +3,8 @@
         <section class="principal">
             <div>
                 <h1>{{ otherText }}</h1>
-                <p>Somos um time 100% digital construindo produtos 100% digitais</p>
+                <p>Somos um time <span>{{ porcentagem }}</span> digital construindo produtos <span>{{ porcentagem
+                        }}</span> digitais</p>
                 <a href="#"><button>Entre em Contato</button></a>
             </div>
         </section>
@@ -44,11 +45,50 @@ onMounted(() => {
         }, delay * indice);
     });
 });
+
+const secondText = "100%";
+const porcentagem = ref('');
+const otherDelay = 200;
+
+onMounted(() => {
+    const letras = secondText.split("");
+
+    letras.forEach((letra, indice) => {
+        setTimeout(() => {
+            porcentagem.value += letra;
+        }, otherDelay * indice);
+    });
+});
 </script>
 
 <style scoped>
 div h1 {
-    font-size: 5rem;
+    font-size: 6rem;
+    line-height: 7rem;
+    color: rgb(45, 0, 87);
+}
+
+div p {
+    font-size: 1.7rem;
+}
+
+div {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+span {
+    font-size: 2rem;
+
+}
+
+button,
+button a {
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    border-radius: 10rem;
+    font-size: 1.2rem;
+
 }
 
 .headerprincipal {
