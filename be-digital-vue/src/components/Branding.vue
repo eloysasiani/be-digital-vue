@@ -11,16 +11,16 @@
 
     <section class="more-about-us">
         <div>
-            <img :src="trophy" alt="" class="firstimage">
-            <h2 id="counter-text">Mais de 0 prêmios</h2>
+            <img :src="trophy" alt="" class="brand">
+            <h2 id="counter-text">Mais de <span>0</span> prêmios</h2>
         </div>
         <div>
-            <img :src="threestar" alt="" class="secondimage">
-            <h2 id="counter2-text">Mais de 0 clientes satisfeitos</h2>
+            <img :src="threestar" alt="" class="brand">
+            <h2 id="counter2-text">Mais de <span>0</span> clientes satisfeitos</h2>
         </div>
         <div>
-            <img :src="star" alt="" class="otherimage">
-            <h2 id="counter3-text">Mais de 0 vistorias</h2>
+            <img :src="star" alt="" class="brand">
+            <h2 id="counter3-text">Mais de <span>0</span> vistorias</h2>
         </div>
     </section>
 </template>
@@ -36,20 +36,21 @@ import trophy from "@/assets/images/gold-thropy.png"
 import threestar from "@/assets/images/three-star-rating.png"
 
 onMounted(() => {
-    const animateCounter = (id, limit, text) => {
+    const animateCounter = (id, limit) => {
         let count = 1
-        const el = document.getElementById(id)
+        const el = document.querySelector(`#${id} span`)
         const interval = setInterval(() => {
-            el.textContent = `Mais de ${count} ${text}`
+            el.textContent = count
             count++
             if (count > limit) clearInterval(interval)
         }, 100)
     }
 
-    animateCounter("counter-text", 25, "prêmios")
-    animateCounter("counter2-text", 62, "clientes satisfeitos")
-    animateCounter("counter3-text", 47, "vistorias")
+    animateCounter("counter-text", 25)
+    animateCounter("counter2-text", 62)
+    animateCounter("counter3-text", 47)
 })
+
 </script>
 
 <style scoped>
@@ -71,21 +72,54 @@ onMounted(() => {
     border-radius: 2rem;
 }
 
-.more-about-us img {
-    width: 12vh;
-}
+
 
 .more-about-us h2 {
     font-size: 1.4rem;
+    color: aliceblue;
+    font-weight: 800;
 }
 
 .more-about-us {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background: #2A7B9B;
-    background: #2A7B9B;
-    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(8, 53, 117, 1) 50%, rgba(111, 237, 83, 1) 100%);
+    padding: 4rem;
+    border-radius: 2rem;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
 
+}
+
+.more-about-us div {
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
+}
+
+
+.more-about-us img {
+    width: 14vh;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+span {
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 </style>
