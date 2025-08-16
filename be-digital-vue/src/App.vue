@@ -26,7 +26,6 @@ function onDown() {
 
 onMounted(() => {
   if (dot.value) {
-    // Posição inicial visível (centro do ecrã)
     dot.value.style.display = 'block'
     dot.value.style.transform = `translate(${window.innerWidth / 2}px, ${window.innerHeight / 2}px)`
   }
